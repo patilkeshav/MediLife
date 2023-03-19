@@ -1,0 +1,17 @@
+
+.category-name{
+    position: relative;
+    top: 50%;
+    left: 10%;
+}
+
+.card-description{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+    .card-image{
+        height: 240px;
+        width: 200px;
+        margin-top: 2px;
+}

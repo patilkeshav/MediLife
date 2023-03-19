@@ -1,0 +1,41 @@
+<form [formGroup]=" SignUpform" (ngSubmit)="SignUp()">
+    <div class="mb-3">
+        <label for="exampleInputusername" class="form-label">User Name</label>
+        <input type="text" class="form-control" id="exampleInputusername" aria-describedby="emailHelp"
+            formControlName="UserName">
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <label for="exampleInputMobileNo" class="form-label">Mobile No</label>
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" id="exampleInputMobileNo" formControlName="MobileNo">
+        <span class="input-group-text cursor" (click)="getOtp()">Get OTP</span>
+    </div>
+    <div *ngIf="isGetOtp">
+    <label for="exampleInputverifyotp" class="form-label">Enter OTP</label>
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" id="exampleInputverifyotp">
+        <span class="input-group-text" (click)="verifyOtp()">Verify OTP</span>
+    </div>
+    <div>
+        <div>
+            OTP is Valid For:-{{otpCounter}}
+        </div>
+    </div>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" formControlName="Password" placeholder="enter password">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputconfirmPassword1" class="form-label">Confirm Password</label>
+        <input type="password" class="form-control" id="exampleInputconfirmPassword1" formControlName="confirmPassword" placeholder="Confirm password">
+    </div>
+
+    <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <div class="d-grid gap-2 m-2">
+        <button type="submit" class="btn btn-primary ">submit</button>
+    </div>
+</form>
