@@ -10,7 +10,7 @@ import { HttpService } from 'src/app/core/services/http.service';
 export class ViewProductsDetailsComponent implements OnInit {
 SelectedDrugCode!:string|null;
 ProductsDetails:any;
-SelectedDrungCodeOFTopDeals!:string|null;
+// SelectedDrungCodeOFTopDeals!:string|null;
 ProductDetailsOFTOpDealProduct:any;
 getTopDealsCategoryData:any=[];
   constructor(private http:HttpService,private route:ActivatedRoute){

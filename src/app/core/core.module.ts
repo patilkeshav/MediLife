@@ -6,6 +6,7 @@ import { PageNotFoundComponent } from './Components/page-not-found/page-not-foun
 import { SignInComponent } from './Components/sign-in/sign-in.component';
 import { SignUpComponent } from './Components/sign-up/sign-up.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -15,12 +16,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FooterComponent,
     PageNotFoundComponent,
     SignInComponent,
-    SignUpComponent
+    SignUpComponent,
   ],
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ],
   exports: [
     HeaderComponent,

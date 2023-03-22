@@ -20,4 +20,9 @@ httpheaders:HttpHeaders=new HttpHeaders()
     const Url=this.baseUrl+endpoint
     return this.http.get(Url,{headers:this.httpheaders,params:httpParams})
   }
+
+  postDataToServer(endpoint:string,data:any){
+      const Url=this.baseUrl+endpoint
+      return this.http.post(Url,data,{headers:this.httpheaders})
+  }
 }

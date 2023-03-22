@@ -7,7 +7,10 @@
     </a>
     <div class="text-end me-4 ">
       <a class="me-2 text-decoration-none">About Us</a>
-      <a class="ms-2 text-decoration-none cursor" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</a>
+      <a class="ms-2 text-decoration-none cursor" data-bs-toggle="modal" data-bs-target="#exampleModal" *ngIf="!isUserLoggedIn">Login</a>
+      <a class="ms-2 text-decoration-none cursor" *ngIf="isUserLoggedIn"><span>{{ userDetails.UserName}}</span></a>
+      <i class="bi bi-cart ms-3 fs-4 cursor"  routerLink="/cart" ></i><span class="rounded-circle bg-danger text-white cartIcon px-1">{{ cartCounter}}</span>
+      <!-- <a class="ms-2 text-decoration-none cursor" (click)="logoutAction()" *ngIf="isUserLoggedIn">LogOut</a> -->
     </div>
   </div>
 </nav>
@@ -18,10 +21,10 @@
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="exampleModalLabel">{{actionName==='SignUp'? 'Sign Up':'Sign In'}}</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" #closeBtn></button>
         </div>
         <div class="modal-body">
-          <app-sign-in *ngIf="actionName==='SignIn'"></app-sign-in>
+          <app-sign-in *ngIf="actionName==='SignIn'" (eventAction)="getAction($event)"></app-sign-in>
           <app-sign-up *ngIf="actionName==='SignUp'"></app-sign-up>
         </div>
         <div class="d-grid gap-2 m-4 mt-1">

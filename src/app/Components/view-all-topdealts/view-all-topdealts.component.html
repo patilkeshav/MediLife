@@ -14,8 +14,8 @@
         <div class="card-body">
           <h5 class="card-title card-description" [title]="item.description">{{slide.description}}</h5>
           <p class="card-text text-body-tertiary">{{slide.type}}</p>
-          <a class="card-text text-decoration-none text-dark">MRP&nbsp;<br><span class=" me-2 text-decoration-line-through"  *ngIf="slide.actualPrice!=slide.discountPrice">{{slide.discountPrice}}</span><span class="fs-5 fw-semibold text-dark">₹ &nbsp;{{slide.discountPrice}}</span></a>
-         <a class="float-end"> <button type="button" class="btn btn-outline-primary rounded-pill ">ADD</button></a>
+          <a class="card-text text-decoration-none text-dark">MRP&nbsp;<br><span class=" me-2 text-decoration-line-through"  *ngIf="slide.actualPrice!=slide.discountPrice">{{slide.actualPrice}}</span><span class="fs-5 fw-semibold text-dark">₹ &nbsp;{{slide.discountPrice}}</span></a>
+         <a class="float-end"> <button type="button" class="btn btn-outline-primary rounded-pill " (click)="addToCart(slide)">ADD</button></a>
         </div>
       </div>
     </div>

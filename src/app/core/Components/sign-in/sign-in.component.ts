@@ -1,5 +1,5 @@
 import { HttpParams } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpService } from '../../services/http.service';
 
@@ -12,7 +12,7 @@ export class SignInComponent implements OnInit {
 SignInForm!:FormGroup;
 LoginData:any;
 isNewUser:boolean=false;
-
+ @Output() eventAction:EventEmitter<boolean>=new EventEmitter(false)
   constructor( private Fb:FormBuilder, private http:HttpService){ }
   ngOnInit(): void {
     this.initializeForm()
@@ -32,7 +32,10 @@ isNewUser:boolean=false;
       if(el && el.length >0){
        this.LoginData=el;
        this.isNewUser=false;
-
+       this.eventAction.emit(true);
+       const token ="Betytoken99jys";
+       localStorage.setItem("auth-token",token);
+       localStorage.setItem("userDetails",JSON.stringify(el[0]));
       } else{
         this.isNewUser=true;
 

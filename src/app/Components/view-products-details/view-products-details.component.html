@@ -10,7 +10,7 @@
           <p class= "text-body-tertiary text-start"><span class="fs-6 fw-semibold" >Composition:-</span>{{ProductsDetails?.composition}}</p>
           <p class= "text-body-tertiary text-start"><span class="fs-6 fw-semibold">Brand:-</span>{{ProductsDetails?.brand}}</p>
           <p class= "text-body-tertiary text-start"><span class="fs-6 fw-semibold">Status:-</span>{{ProductsDetails?.availability}}</p>
-          <a class="text-decoration-none text-dark float-start">MRP&nbsp;<br><span class=" me-2 text-decoration-line-through"  *ngIf="ProductsDetails?.actualPrice!=ProductsDetails?.discountPrice">{{ProductsDetails?.discountPrice}}</span><span class="fs-5 fw-semibold text-dark">₹ &nbsp;{{ProductsDetails?.discountPrice}}</span></a><br><br>
+          <a class="text-decoration-none text-dark float-start">MRP&nbsp;<br><span class=" me-2 text-decoration-line-through"  *ngIf="ProductsDetails?.actualPrice != ProductsDetails?.discountPrice">{{ProductsDetails.actualPrice}}</span><span class="fs-5 fw-semibold text-dark">₹ &nbsp;{{ProductsDetails?.discountPrice}}</span></a><br><br>
           <a class="float-end p-3"> <button type="button" class="btn btn-outline-primary rounded-pill ">ADD</button></a>
         </div>
  </div>

@@ -1,3 +1,13 @@
+<div class="row">
+    <div class="alert alert-danger" role="alert" *ngIf="SignUpform.valid && !isOtpVerified && !isWrongOtp ">
+        Please Verify OTP First
+      </div>
+      <div class="alert alert-success" role="alert" *ngIf="isOtpVerified">
+        OTP verification is Succesfull.
+      </div>
+      <div class="alert alert-danger" role="alert" *ngIf="isWrongOtp">
+        Please Enter valid OTP.
+      </div>
 <form [formGroup]=" SignUpform" (ngSubmit)="SignUp()">
     <div class="mb-3">
         <label for="exampleInputusername" class="form-label">User Name</label>
@@ -8,18 +18,28 @@
     <label for="exampleInputMobileNo" class="form-label">Mobile No</label>
     <div class="input-group mb-3">
         <input type="text" class="form-control" id="exampleInputMobileNo" formControlName="MobileNo">
-        <span class="input-group-text cursor" (click)="getOtp()">Get OTP</span>
+        <span class="input-group-text cursor" (click)="getOtp()" *ngIf="!isOtpVerified">Get OTP</span>
+        <span class="input-group-text text-success" *ngIf="isOtpVerified"><i class="bi bi-check-circle-fill"></i></span>
     </div>
+    <div *ngIf="!isOtpVerified">
     <div *ngIf="isGetOtp">
     <label for="exampleInputverifyotp" class="form-label">Enter OTP</label>
     <div class="input-group mb-3">
-        <input type="text" class="form-control" id="exampleInputverifyotp">
-        <span class="input-group-text" (click)="verifyOtp()">Verify OTP</span>
+        <input type="text" class="form-control" id="exampleInputverifyotp" #Otp>
+        <span class="input-group-text cursor" (click)="verifyOtp(Otp.value)">Verify OTP</span>
     </div>
     <div>
-        <div>
-            OTP is Valid For:-{{otpCounter}}
-        </div>
+        <div *ngIf="isCounterStop">
+            OTP is valid for:-{{otpCounter}}s </div>
+    </div>
+</div>
+    <div>
+        <!-- <div *ngIf="isOtpVerified" class="text-success text-center">
+            Otp verification Succesfull !
+        </div> -->
+        <!-- <div *ngIf="isWrongOtp" class="text-danger text-center">
+            Entered Wrong OTP ! Please Enter Valid OTP 
+        </div> -->
     </div>
     </div>
     <div class="mb-3">
@@ -29,6 +49,7 @@
     <div class="mb-3">
         <label for="exampleInputconfirmPassword1" class="form-label">Confirm Password</label>
         <input type="password" class="form-control" id="exampleInputconfirmPassword1" formControlName="confirmPassword" placeholder="Confirm password">
+        <div *ngIf="SignUpform.controls['confirmPassword'].errors?.['ispasswordmismatch']" class="text-danger">password and confirm password not same</div>
     </div>
 
     <div class="mb-3 form-check">
@@ -36,6 +57,7 @@
         <label class="form-check-label" for="exampleCheck1">Check me out</label>
     </div>
     <div class="d-grid gap-2 m-2">
-        <button type="submit" class="btn btn-primary ">submit</button>
+        <button type="submit" class="btn btn-primary "[disabled]="SignUpform.invalid" (click)="onSubmit()">submit</button>
     </div>
 </form>
+</div>
