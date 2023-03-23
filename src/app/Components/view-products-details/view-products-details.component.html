@@ -1,0 +1,33 @@
+<app-top-deals-header></app-top-deals-header>
+<div class="container container-home mt-5 p-2 shadow rounded-5">
+ <div class="row">
+    <div class="col-md-6 mb-5 ">
+        <img [src]="ProductsDetails?.productImageSlug[0]" alt="..." height="380px" width="300px">
+    </div>
+        <div class="col-md-6 text-center product-description">
+          <h5 class="text-start">{{ProductsDetails?.description}}</h5>
+          <p class= "text-body-tertiary text-start"><span class="fs-6 fw-semibold">Brand:-</span>{{ProductsDetails?.brand}}</p>
+          <p class= "text-body-tertiary text-start"><span class="fs-6 fw-semibold" >Composition:-</span>{{ProductsDetails?.composition}}</p>
+          <p class= "text-body-tertiary text-start"><span class="fs-6 fw-semibold">Brand:-</span>{{ProductsDetails?.brand}}</p>
+          <p class= "text-body-tertiary text-start"><span class="fs-6 fw-semibold">Status:-</span>{{ProductsDetails?.availability}}</p>
+          <a class="text-decoration-none text-dark float-start">MRP&nbsp;<br><span class=" me-2 text-decoration-line-through"  *ngIf="ProductsDetails?.actualPrice != ProductsDetails?.discountPrice">{{ProductsDetails.actualPrice}}</span><span class="fs-5 fw-semibold text-dark">₹ &nbsp;{{ProductsDetails?.discountPrice}}</span></a><br><br>
+          <a class="float-end p-3"> <button type="button" class="btn btn-outline-primary rounded-pill ">ADD</button></a>
+        </div>
+ </div>
+</div>
+<!-- <div class="row mt-4 ms-4 p-2" *ngFor="let item of getTopDealsCategoryData">
+  <div class="card shadow rounded-4" style="width: 15rem;height: 25rem;">
+      <div class="card-body" >
+        <h4 class="card-title category-name">{{item.categoryName}}</h4>
+      </div>
+  </div>
+     <div class="card rounded-4 shadow ms-4" style="width: 18rem;height: 25rem;" *ngFor="let slide of item.top_deals">
+       <img [src]="slide.productImageSlug[0]" alt="..." class="card-image cursor m-2" >
+       <div class="card-body">
+         <h5 class="card-title card-description" [title]="item.description">{{slide.description}}</h5>
+         <p class="card-text text-body-tertiary">{{slide.type}}</p>
+         <a class="card-text text-decoration-none text-dark">MRP&nbsp;<br><span class=" me-2 text-decoration-line-through"  *ngIf="slide.actualPrice!=slide.discountPrice">{{slide.discountPrice}}</span><span class="fs-5 fw-semibold text-dark">₹ &nbsp;{{slide.discountPrice}}</span></a>
+        <a class="float-end"> <button type="button" class="btn btn-outline-primary rounded-pill ">ADD</button></a>
+       </div>
+     </div>
+   </div> -->

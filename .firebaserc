@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "med-medlife": {
+      "hosting": {
+        "MediLife": [
+          "med-medlife"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "med-medlife"
+  }
+}

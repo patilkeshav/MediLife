@@ -1,0 +1,18 @@
+<div class="container mt-4 containerwidth">
+  <owl-carousel-o [options]="customOptions">
+
+    <ng-container *ngFor="let item of topDeals ">
+      <ng-template carouselSlide>
+        <div class="card rounded-4 shadow" style="width: 16rem;">
+          <img [src]="item.productImageSlug[0]" alt="..." class="card-image cursor"  [routerLink]="['/view-products-details',item.drugCode]">
+          <div class="card-body ">
+            <h5 class="card-title card-description" [title]="item.description">{{item.description}}</h5>
+            <p class="card-text text-body-tertiary">{{item.type}}</p>
+            <a class="card-text text-decoration-none text-dark">MRP&nbsp;<br><span class=" me-2 text-decoration-line-through"  *ngIf="item.actualPrice!=item.discountPrice">{{item.actualPrice}}</span><span class="fs-5 fw-semibold text-dark">₹ &nbsp;{{item.discountPrice}}</span></a>
+           <a class="float-end"> <button type="button" class="btn btn-outline-primary rounded-pill " (click)="addToCart(item)">ADD</button></a>
+          </div>
+        </div>
+      </ng-template>
+    </ng-container> 
+  </owl-carousel-o>
+  </div>
