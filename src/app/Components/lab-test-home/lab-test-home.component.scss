@@ -14,16 +14,7 @@
 // -webkit-text-fill-color: transparent;
 height: 400px;
 }
-.borderForTests{
-    border:1px solid oldlace;
-    border-radius: 18px;
-    background-color:white;
-    color:rgba(116, 111, 111, 0.626);
 
-}
-.testContainer{
-    width: 85%;
-}
 .SampleCollection{
     border: 1px solid #FEE6E6;
     padding: 4px;
@@ -39,8 +30,13 @@ height: 400px;
     color: white;
 } 
 .hashtag{
-    border: 1px solid pink;
+    border: 1px solid red;
+    background-color:rgba(246, 10, 10, 0.762);
     width: 40%;
     border-bottom-left-radius: 12px;
-    border-top-right-radius: 12px;
+    border-top-right-radius: 20px;
+    position:relative;
+    left:233px;
+    box-shadow: #FEE6E6;
+    padding: 1px;
 }

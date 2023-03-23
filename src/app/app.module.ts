@@ -16,6 +16,8 @@ import { TopDealsHeaderComponent } from './Components/top-deals-header/top-deals
 import { ViewProductsDetailsComponent } from './Components/view-products-details/view-products-details.component';
 import { RouterModule } from '@angular/router';
 import { LabTestHomeComponent } from './Components/lab-test-home/lab-test-home.component';
+import { ViewAllLabTestsComponent } from './Components/view-all-lab-tests/view-all-lab-tests.component';
+import { BookLabtestsComponent } from './Components/book-labtests/book-labtests.component';
 
 
 @NgModule({
@@ -28,6 +30,8 @@ import { LabTestHomeComponent } from './Components/lab-test-home/lab-test-home.c
     TopDealsHeaderComponent,
     ViewProductsDetailsComponent,
     LabTestHomeComponent,
+    ViewAllLabTestsComponent,
+    BookLabtestsComponent,
   ],
   imports: [
     BrowserModule,
