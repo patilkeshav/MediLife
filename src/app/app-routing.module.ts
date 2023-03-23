@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './Components/home/home.component';
+import { LabTestHomeComponent } from './Components/lab-test-home/lab-test-home.component';
 import { MedicineHomeComponent } from './Components/medicine-home/medicine-home.component';
 import { ViewAllTopdealtsComponent } from './Components/view-all-topdealts/view-all-topdealts.component';
 import { ViewProductsDetailsComponent } from './Components/view-products-details/view-products-details.component';
@@ -11,6 +12,7 @@ const routes: Routes = [
   {path:"medicine",component:MedicineHomeComponent},
   {path:"view-All",component:ViewAllTopdealtsComponent},
   {path:"view-products-details/:drugCode",component:ViewProductsDetailsComponent},
+  {path:"lab-test-home",component:LabTestHomeComponent},
   { path:'cart', loadChildren: () => import('./cart/cart.module').then(m => m.CartModule) },
   {path:"",redirectTo:"/home",pathMatch:'full'},
   {path:"**",component:PageNotFoundComponent}

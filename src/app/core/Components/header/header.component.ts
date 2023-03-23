@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit{
    isUserLoggedIn:boolean=false;
    userDetails:any;
    cartCounter!:Observable<number>
-  //  cartCounter:number=0;
+   // cartCounter:number=0;
   constructor(private auth:AuthService,private router:Router,private shared:SharedService){}
   ngOnInit(): void {
     this.shared.cartCountetObs.subscribe((el:any)=>{

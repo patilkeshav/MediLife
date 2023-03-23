@@ -15,6 +15,7 @@ import { ViewAllTopdealtsComponent } from './Components/view-all-topdealts/view-
 import { TopDealsHeaderComponent } from './Components/top-deals-header/top-deals-header.component';
 import { ViewProductsDetailsComponent } from './Components/view-products-details/view-products-details.component';
 import { RouterModule } from '@angular/router';
+import { LabTestHomeComponent } from './Components/lab-test-home/lab-test-home.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { RouterModule } from '@angular/router';
     ViewAllTopdealtsComponent,
     TopDealsHeaderComponent,
     ViewProductsDetailsComponent,
+    LabTestHomeComponent,
   ],
   imports: [
     BrowserModule,

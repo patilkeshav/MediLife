@@ -8,7 +8,7 @@
     <div class="text-end me-4 ">
       <a class="me-2 text-decoration-none">About Us</a>
       <a class="ms-2 text-decoration-none cursor" data-bs-toggle="modal" data-bs-target="#exampleModal" *ngIf="!isUserLoggedIn">Login</a>
-      <a class="ms-2 text-decoration-none cursor" *ngIf="isUserLoggedIn"><span>{{ userDetails.UserName}}</span></a>
+      <a class="ms-2 text-decoration-none cursor" *ngIf="isUserLoggedIn"><span>{{userDetails.UserName}}</span></a>
       <i class="bi bi-cart ms-3 fs-4 cursor"  routerLink="/cart" ></i><span class="rounded-circle bg-danger text-white cartIcon px-1">{{ cartCounter}}</span>
       <!-- <a class="ms-2 text-decoration-none cursor" (click)="logoutAction()" *ngIf="isUserLoggedIn">LogOut</a> -->
     </div>

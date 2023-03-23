@@ -1,0 +1,46 @@
+.inputsearchgroup{
+    position: relative;
+    top:20px;
+    width: 85%;
+    margin-left: 5px;
+}
+.location{
+   position:relative;
+   margin-left: 60px;
+   }
+ .containerColor{
+//     background: radial-gradient( rgba(243, 188, 237, 0.793) 10%, rgb(222, 239, 247) 90%);
+    background:linear-gradient(90deg, #E8F1FE 0%, #FEE6E6 100%);
+// -webkit-text-fill-color: transparent;
+height: 400px;
+}
+.borderForTests{
+    border:1px solid oldlace;
+    border-radius: 18px;
+    background-color:white;
+    color:rgba(116, 111, 111, 0.626);
+
+}
+.testContainer{
+    width: 85%;
+}
+.SampleCollection{
+    border: 1px solid #FEE6E6;
+    padding: 4px;
+    border-radius: 15px;
+    background-color: #FEE6E6;
+
+}
+.Offersection{
+    border: 1px solid; 
+    width: 25%;
+    border-radius: 12px;
+    background:linear-gradient(90deg, #186de5 0%, #dd12aa 100%);
+    color: white;
+} 
+.hashtag{
+    border: 1px solid pink;
+    width: 40%;
+    border-bottom-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
