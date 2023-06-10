@@ -9,13 +9,16 @@
     <div class="p-2"><i class="bi bi-check-circle-fill me-1"></i>Store Pick up</div>
   </div>
 </div>
+
+<!-- searchBar -->
+
 <div class="container-fluid searchcontainer">
   <div class="input-group input-group-lg shadow rounded-5">
     <span class="input-group-text search-heanding fs-6 cursor bg-white">{{ShowDefaultPincode ? "Pune
       411001":pincodeDetails?.pincodeCity +" "+pincodeDetails?.pincode}}&nbsp;&nbsp;<i
         class="bi bi-chevron-down text-primary fw-bold ms-2" data-bs-toggle="modal"
         data-bs-target="#exampleModal"></i></span>
-    <input type="text" class="form-control fs-6" aria-label="Sizing example input" placeholder="Search Medicines">
+    <input type="text" class="form-control fs-6" aria-label="Sizing example input" placeholder="Search Medicines"  [(ngModel)]="searchTerm" (keyup)="onSearch()">
     <span class="input-group-text search-heanding fs-6 cursor bg-white text-primary fw-semibold"><i
         class="bi bi-search ms-3"></i>&nbsp;Search</span>
   </div>
@@ -49,7 +52,7 @@
     <h3 class="float-start">Top Deals</h3>
     <a class="fs-5 text text-decoration-none float-end" routerLink="/view-All">View All</a> 
   </div>
-  <app-top-deals></app-top-deals>
+  <app-top-deals [topDeals]="filterData"></app-top-deals>
 </div>
 
 <div class="container">
@@ -61,6 +64,7 @@
           <h1 class="modal-title fs-5" id="exampleModalLabel">Set your location</h1>
           <button type="button" class="btn btn-link text-decoration-none" data-bs-dismiss="modal" aria-label="Close" #closeButton>Close</button>
         </div>
+        <!-- pincode -->
         <div class="modal-body">
           <div class="col-md-12">
             <caption for="validationCustom01" class="form-label">pincode</caption>
