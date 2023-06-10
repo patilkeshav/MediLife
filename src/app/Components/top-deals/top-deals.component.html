@@ -1,7 +1,7 @@
 <div class="container mt-4 containerwidth">
   <owl-carousel-o [options]="customOptions">
 
-    <ng-container *ngFor="let item of topDeals ">
+    <ng-container *ngFor="let item of topDeals">
       <ng-template carouselSlide>
         <div class="card rounded-4 shadow" style="width: 16rem;">
           <img [src]="item.productImageSlug[0]" alt="..." class="card-image cursor"  [routerLink]="['/view-products-details',item.drugCode]">
